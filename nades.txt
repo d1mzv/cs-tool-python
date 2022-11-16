@@ -1,0 +1,7 @@
+script i <- 0;
+script PLAYER <- Entities.FindByClassname(null,"player")
+
+noclip 0;script PLAYER.SetVelocity(Vector(0, 0, 0));script SendToConsole(data[i][1]);
+
+bind "e" "noclip 0;script PLAYER.SetVelocity(Vector(0, 0, 0));script i=i+1;script if(i==data.len())i=0;script SendToConsole(data[i][1]);script SendToConsole(data[i][0]);"
+bind "q" "noclip 0;script PLAYER.SetVelocity(Vector(0, 0, 0));script i=i-1;script if(i==-1)i=data.len()-1;script SendToConsole(data[i][1]);script SendToConsole(data[i][0]);"
