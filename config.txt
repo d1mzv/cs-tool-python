@@ -1,6 +1,7 @@
 {
     "token": "secret_o9i7RdJyj9jMoJvDXwQFLoxPDxsleyfLUiutxS9JKxZ",
     "db_id": "61fe071adcfc42aba900d2bdb058926d",
-    "cfg_path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Counter-Strike Global Offensive\\csgo\\cfg\\",
-    "playlist": ""
+    "steam_path": "C:\Program Files (x86)\Steam",
+    "playlist": "",
+    "copy_prac_cfg": "true"
 }
