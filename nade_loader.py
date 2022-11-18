@@ -45,7 +45,7 @@ while True:
     response = requests.post(url, json=payload, headers=headers)
     respons_json = json.loads(response.text)
     results = respons_json['results']
-
+    # print(json.dumps(respons_json, indent=4))
     if len(respons_json['results']) == 100:
         last_id = results[-1]['id']
         payload = {"page_size": 100, "start_cursor": last_id,
@@ -55,6 +55,7 @@ while True:
         results = results + respons_json['results'][1:]
     res0 = {}
     count = 0
+
     for result in results:
         if len(result['properties']['Name']['title']) == 0 or len(result['properties']['Coordinates']['rich_text']) == 0:
             continue
@@ -71,6 +72,13 @@ while True:
         tmp = ';'.join(tmp)
         coordinates[3] = tmp
         coordinates = ' '.join(coordinates)
+        # print(result['properties']['Throw Type']['select'])
+        throw_type = ''
+        if result['properties']['Throw Type']['select'] is not None:
+            throw = result['properties']['Throw Type']['select']['name']
+            throw_type = f'[{throw} Throw]'
+            name = name + ' ' + throw_type
+            # print(throw_type)
         playlists = []
         for i in range(len(result['properties']['Playlists']['multi_select'])):
             playlists.append(result['properties']['Playlists']
