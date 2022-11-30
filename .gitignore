@@ -36,3 +36,6 @@ build/nade_loader/localpycs/pyimod03_ctypes.pyc
 build/nade_loader/localpycs/pyimod04_pywin32.pyc
 build/nade_loader/localpycs/struct.pyc
 nade_loader.spec
+__pycache__/nade_loader_v2.cpython-310.pyc
+data_filtered.txt
+data.txt
